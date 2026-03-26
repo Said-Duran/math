@@ -40,3 +40,24 @@ Deno.test("Division durch Bruch mit 0 im Zähler", () => {
 
   a.divide(b);
 });
+
+Deno.test("toFloat rundet korrekt", () => {
+  const f = new Fraction(1, 3);
+
+  const result = f.toFloat(2);
+
+  if (result !== 0.33) {
+    throw new Error("Rundung falsch");
+  }
+});
+
+Deno.test("Multiplikation mit 0", () => {
+  const a = new Fraction(1, 2);
+  const b = new Fraction(0, 5);
+
+  a.multiply(b);
+
+  if (a.toString() !== "0/10") {
+    throw new Error("Multiplikation mit 0 falsch");
+  }
+});
