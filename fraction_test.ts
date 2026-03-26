@@ -34,3 +34,9 @@ Deno.test("1/3 + 2/6 = 2/3 is roughly 0.67", () => {
   // Assert
   assertAlmostEquals(left.toFloat(0.01), 0.67);
 });
+Deno.test("Division durch Bruch mit 0 im Zähler", () => {
+  const a = new Fraction(1, 2);
+  const b = new Fraction(0, 1);
+
+  a.divide(b);
+});
