@@ -55,5 +55,11 @@ export class Fraction {
       throw new Error(`non-numeric numerator/denominator`);
     }
     return new Fraction(numerator, denominator);
-  }
+  } 
+  Deno.test("Division durch Bruch mit 0 im Zähler", () => {
+  const a = new Fraction(1, 2);
+  const b = new Fraction(0, 1);
+
+  a.divide(b);
+});
 }
