@@ -9,5 +9,12 @@ export function gcdBruteForce(a: number, B: number): number {
 }
 
 export function gcdEuclid(a: number, b: number): number {
-  return 1;
+  if (a === b) {
+    return a;
+  }
+
+  const min = Math.min(a, b);
+  const max = Math.max(a, b);
+
+  return gcdEuclid(min, max - min);
 }
