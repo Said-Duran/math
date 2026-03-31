@@ -71,3 +71,13 @@ Deno.test("1/1 bleibt 1/1", () => {
     throw new Error("Cancel falsch");
   }
 });
+
+Deno.test("2/4 wird zu 1/2", () => {
+  const f = new Fraction(2, 4);
+
+  f.cancel();
+
+  if (f.toString() !== "1/2") {
+    throw new Error("Nicht korrekt gekürzt");
+  }
+});
