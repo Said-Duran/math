@@ -81,3 +81,23 @@ Deno.test("2/4 wird zu 1/2", () => {
     throw new Error("Nicht korrekt gekürzt");
   }
 });
+
+Deno.test("Bereits gekürzter Bruch bleibt gleich", () => {
+  const f = new Fraction(3, 5);
+
+  f.cancel();
+
+  if (f.toString() !== "3/5") {
+    throw new Error("Falsch verändert");
+  }
+});
+
+Deno.test("6/9 wird zu 2/3", () => {
+  const f = new Fraction(6, 9);
+
+  f.cancel();
+
+  if (f.toString() !== "2/3") {
+    throw new Error("Nicht korrekt gekürzt");
+  }
+});
