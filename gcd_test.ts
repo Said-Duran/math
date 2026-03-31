@@ -1,4 +1,4 @@
-importt { gcdBruteForce } from "./gcd.ts";
+import { gcdBruteForce } from "./gcd.ts";
 
 Deno.test("ggT von 1 und 1 ist 1", () => {
   const result = gdcsBruteForce(1,1);
