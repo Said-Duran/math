@@ -61,3 +61,13 @@ Deno.test("Multiplikation mit 0", () => {
     throw new Error("Multiplikation mit 0 falsch");
   }
 });
+
+Deno.test("1/1 bleibt 1/1", () => {
+  const f = new Fraction(1, 1);
+
+  f.cancel();
+
+  if (f.toString() !== "1/1") {
+    throw new Error("Cancel falsch");
+  }
+});
