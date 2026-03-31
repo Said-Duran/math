@@ -34,3 +34,22 @@ Deno.test("ggT von gleichen Zahlen", () => {
   }
 });
 
+import { gcdBruteForce, gcdEuclid } from "./gcd.ts";
+
+Deno.test("ggT(8,12) ist 4", () => {
+  if (gcdEuclid(8, 12) !== 4) {
+    throw new Error("Euklid falsch");
+  }
+});
+
+Deno.test("ggT(7,5) ist 1", () => {
+  if (gcdEuclid(7, 5) !== 1) {
+    throw new Error("Euklid falsch");
+  }
+});
+
+Deno.test("ggT gleiche Zahlen", () => {
+  if (gcdEuclid(5, 5) !== 5) {
+    throw new Error("Euklid falsch");
+  }
+});
