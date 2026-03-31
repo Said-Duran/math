@@ -70,3 +70,12 @@ export class Fraction {
 
 public cancel() {
 }
+
+import { gcdBruteForce } from './gcd.ts';
+
+public cancel() {
+  const gcd = gcdBruteForce(this.numerator, this.denominator);
+
+  this.numerator = this.numerator / gcd;
+  this.denominator = this.denominator / gcd;
+}
