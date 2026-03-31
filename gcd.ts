@@ -7,3 +7,7 @@ export function gcdBruteForce(a: number, B: number): number {
     }
   }
 }
+
+export function gcdEuclid(a: number, b: number): number {
+  return 1;
+}
