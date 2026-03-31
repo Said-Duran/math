@@ -67,3 +67,6 @@ export class Fraction {
   a.divide(b);
 });
 }
+
+public cancel() {
+}
