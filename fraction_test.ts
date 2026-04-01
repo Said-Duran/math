@@ -101,3 +101,29 @@ Deno.test("6/9 wird zu 2/3", () => {
     throw new Error("Nicht korrekt gekürzt");
   }
 });
+
+Deno.test("Konstruktur kürzt automatisch", () => {
+  const f = new Fraction(2, 4);
+if (f.toString() !== "1/2"){
+  throw new Error("Nicht automatisch gekürzt");
+}
+});
+
+Deno.test("Addition wird automatisch gekürzt", () => {
+  const a = new Fraction(1, 2);
+  const b = new Fraction(1, 2);
+
+          a.add(b);
+
+          if (a.toString() !== "1/1") {
+            throw new Error("Addition nicht gekürzt");
+          }
+});
+
+Deno.test("parse kürzt automatisch", () => {
+  const f = Fraction.parse("4/8");
+
+          if (f.toString() !== "1/2") {
+            throw new Error("Parse nicht gekürzt");
+          }
+});
