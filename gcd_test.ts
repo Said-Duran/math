@@ -1,7 +1,7 @@
 import { gcdBruteForce } from "./gcd.ts";
 
 Deno.test("ggT von 1 und 1 ist 1", () => {
-  const result = gdcsBruteForce(1,1);
+  const result = gcdBruteForce(1,1);
 
   if (result !== 1) {
     throw new Error("Falsch");
@@ -14,7 +14,7 @@ Deno.test("ggT von 6 und 3 ist 3", () => {
           if (result !== 3) 
     throw new Error("Falsch");
   }
-});
+);
 
 Deno.test("ggT von 8 und 12 ist 4", () => {
   if (gcdBruteForce(8, 12) !== 4) {
@@ -34,7 +34,7 @@ Deno.test("ggT von gleichen Zahlen", () => {
   }
 });
 
-import { gcdBruteForce, gcdEuclid } from "./gcd.ts";
+import { gcdEuclid } from "./gcd.ts";
 
 Deno.test("ggT(8,12) ist 4", () => {
   if (gcdEuclid(8, 12) !== 4) {
@@ -53,3 +53,4 @@ Deno.test("ggT gleiche Zahlen", () => {
     throw new Error("Euklid falsch");
   }
 });
+

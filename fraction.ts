@@ -1,4 +1,5 @@
 import { roundTo } from "./utils.ts";
+import { gcdEuclid } from "./gcd.ts";
 
 export class Fraction {
   constructor(
@@ -69,18 +70,9 @@ export class Fraction {
     }
     return new Fraction(numerator, denominator);
   } 
-  Deno.test("Division durch Bruch mit 0 im Zähler", () => {
-  const a = new Fraction(1, 2);
-  const b = new Fraction(0, 1);
+  
+  //public cancel() {}
 
-  a.divide(b);
-});
-}
-
-public cancel() {
-}
-
-import { gcdBruteForce } from './gcd.ts';
 
 public cancel() {
   const gcd = gcdEuclid(this.numerator, this.denominator);
@@ -88,3 +80,6 @@ public cancel() {
   this.numerator = this.numerator / gcd;
   this.denominator = this.denominator / gcd;
 }
+}
+
+

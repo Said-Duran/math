@@ -127,3 +127,11 @@ Deno.test("parse kürzt automatisch", () => {
             throw new Error("Parse nicht gekürzt");
           }
 });
+
+
+Deno.test("Division durch Bruch mit 0 im Zähler", () => {
+  const a = new Fraction(1, 2);
+  const b = new Fraction(0, 1);
+
+  a.divide(b);
+});
